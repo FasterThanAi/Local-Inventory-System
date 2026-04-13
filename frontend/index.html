@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | Inventory</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-protected="true" data-page="dashboard">
+  <div id="navbar"></div>
+
+  <main class="page">
+    <h1 class="page-title">Dashboard</h1>
+    <p class="page-subtitle">Quick overview of your store activity.</p>
+
+    <div id="dashboardMessage" class="msg"></div>
+
+    <section class="grid cols-2" style="margin-bottom: 16px;">
+      <div class="card">
+        <h3>Total Products</h3>
+        <div id="kpiProducts" class="kpi">0</div>
+      </div>
+      <div class="card">
+        <h3>Total Customers</h3>
+        <div id="kpiCustomers" class="kpi">0</div>
+      </div>
+      <div class="card">
+        <h3>Total Bills</h3>
+        <div id="kpiBills" class="kpi">0</div>
+      </div>
+      <div class="card">
+        <h3>Today's Revenue</h3>
+        <div id="kpiRevenue" class="kpi">Rs 0.00</div>
+      </div>
+    </section>
+
+    <section class="card chart-card" style="margin-bottom: 16px;">
+      <h3>Revenue (Last 7 Days)</h3>
+      <canvas id="revenue7DayChart" height="120" aria-label="7 day revenue chart"></canvas>
+    </section>
+
+    <section class="card" style="margin-bottom: 16px;">
+      <h3>Critical Alerts</h3>
+      <div id="criticalAlerts" class="alerts-wrap"></div>
+    </section>
+
+    <section class="grid cols-3">
+      <a class="card" href="products.html">
+        <h3>Products</h3>
+        <p>View and manage your inventory list.</p>
+      </a>
+      <a class="card" href="customers.html">
+        <h3>Customers</h3>
+        <p>Track profiles and udhaar balances.</p>
+      </a>
+      <a class="card" href="checkout.html">
+        <h3>Checkout</h3>
+        <p>Create bills and complete sales quickly.</p>
+      </a>
+    </section>
+
+    <div class="footer-note">&copy; <span id="year"></span> Local Inventory</div>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/billing.js"></script>
+</body>
+</html>
