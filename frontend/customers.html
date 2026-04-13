@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customers | Inventory</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-protected="true" data-page="customers">
+  <div id="navbar"></div>
+
+  <main class="page">
+    <div class="inline" style="justify-content:space-between; margin-bottom:10px;">
+      <div>
+        <h1 class="page-title">Customers</h1>
+        <p class="page-subtitle">Manage customers and collect udhaar payments.</p>
+      </div>
+      <div class="inline">
+        <a class="btn-outline" href="add-customer.html">Add Customer</a>
+        <button id="refreshCustomersBtn" class="btn-ghost" type="button">Refresh</button>
+      </div>
+    </div>
+
+    <div id="customersMessage" class="msg"></div>
+
+    <section class="card">
+      <div class="inline" style="justify-content:space-between; margin-bottom:10px;">
+        <input
+          id="customersSearchInput"
+          type="search"
+          placeholder="Search by customer name or phone"
+          style="max-width: 340px;"
+        />
+        <div class="inline">
+          <button id="customersPrevBtn" class="btn-ghost" type="button">Prev</button>
+          <span id="customersPageInfo" class="small">Page 1 of 1</span>
+          <button id="customersNextBtn" class="btn-ghost" type="button">Next</button>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Udhaar Balance</th>
+              <th>Amount</th>
+              <th>Action</th>
+              <th>Reminder</th>
+            </tr>
+          </thead>
+          <tbody id="customersTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/customers.js"></script>
+</body>
+</html>

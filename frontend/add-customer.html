@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Customer | Inventory</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-protected="true" data-page="customers">
+  <div id="navbar"></div>
+
+  <main class="page">
+    <h1 class="page-title">Add Customer</h1>
+    <p class="page-subtitle">Create a customer profile for udhaar tracking.</p>
+
+    <section class="card">
+      <form id="addCustomerForm" class="form-grid cols-2" autocomplete="off">
+        <div class="form-row">
+          <label for="customerName">Customer Name</label>
+          <input id="customerName" type="text" required placeholder="Amit Kumar" />
+        </div>
+        <div class="form-row">
+          <label for="customerPhone">Phone</label>
+          <input id="customerPhone" type="tel" required placeholder="9876543210" />
+        </div>
+        <div class="form-row">
+          <label for="udhaarBalance">Opening Udhaar Balance</label>
+          <input id="udhaarBalance" type="number" min="0" step="0.01" value="0" />
+        </div>
+        <div></div>
+        <div class="inline" style="grid-column:1 / -1; justify-content:flex-end;">
+          <a class="btn-ghost" href="customers.html">Back</a>
+          <button class="btn" type="submit">Save Customer</button>
+        </div>
+      </form>
+
+      <div id="addCustomerMessage" class="msg"></div>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/customers.js"></script>
+</body>
+</html>

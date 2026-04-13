@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Product | Inventory</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://unpkg.com/html5-qrcode/html5-qrcode.min.js"></script>
+</head>
+<body data-protected="true" data-page="products">
+  <div id="navbar"></div>
+
+  <main class="page">
+    <h1 class="page-title">Add Product</h1>
+    <p class="page-subtitle">Create a new inventory item.</p>
+
+    <section class="card">
+      <button id="startProductCameraBtn" class="btn-outline" type="button">Scan Barcode</button>
+      <div id="productReader" style="width: 100%; display: none;"></div>
+
+      <form id="addProductForm" class="form-grid cols-2" autocomplete="off">
+        <div class="form-row">
+          <label for="barcode">Barcode</label>
+          <input id="barcode" type="text" required placeholder="8901234567890" />
+        </div>
+        <div class="form-row">
+          <label for="productName">Product Name</label>
+          <input id="productName" type="text" required placeholder="Parle-G Gold" />
+        </div>
+        <div class="form-row">
+          <label for="mrp">MRP</label>
+          <input id="mrp" type="number" min="0" step="0.01" required />
+        </div>
+        <div class="form-row">
+          <label for="sellingPrice">Selling Price</label>
+          <input id="sellingPrice" type="number" min="0" step="0.01" required />
+        </div>
+        <div class="form-row">
+          <label for="stockQuantity">Stock Quantity</label>
+          <input id="stockQuantity" type="number" min="0" step="1" required />
+        </div>
+        <div class="form-row">
+          <label for="expiryDate">Expiry Date</label>
+          <input id="expiryDate" type="date" required />
+        </div>
+        <div class="inline" style="grid-column: 1 / -1; justify-content:flex-end;">
+          <a class="btn-ghost" href="products.html">Back</a>
+          <button class="btn" type="submit">Save Product</button>
+        </div>
+      </form>
+
+      <div id="addProductMessage" class="msg"></div>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/products.js"></script>
+</body>
+</html>

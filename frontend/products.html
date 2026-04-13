@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products | Inventory</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-protected="true" data-page="products">
+  <div id="navbar"></div>
+
+  <main class="page">
+    <div class="inline" style="justify-content:space-between; margin-bottom:10px;">
+      <div>
+        <h1 class="page-title">Products</h1>
+        <p class="page-subtitle">All inventory products with stock and pricing.</p>
+      </div>
+      <div class="inline">
+        <a class="btn-outline" href="add-product.html">Add Product</a>
+        <button id="refreshProductsBtn" class="btn-ghost" type="button">Refresh</button>
+      </div>
+    </div>
+
+    <div id="productsMessage" class="msg"></div>
+
+    <section class="card">
+      <div class="inline" style="justify-content:space-between; margin-bottom:10px;">
+        <input
+          id="productsSearchInput"
+          type="search"
+          placeholder="Search by product name or barcode"
+          style="max-width: 340px;"
+        />
+        <div class="inline">
+          <button id="productsPrevBtn" class="btn-ghost" type="button">Prev</button>
+          <span id="productsPageInfo" class="small">Page 1 of 1</span>
+          <button id="productsNextBtn" class="btn-ghost" type="button">Next</button>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Barcode</th>
+              <th>Name</th>
+              <th>MRP</th>
+              <th>Selling Price</th>
+              <th>Stock</th>
+              <th>Expiry</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="productsTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <div id="editProductModal" class="modal-overlay">
+      <div class="modal-card">
+        <h3>Edit Product</h3>
+        <p class="small" style="margin-bottom: 12px;">Update inventory product details.</p>
+
+        <form id="editProductForm" class="form-grid cols-2" autocomplete="off">
+          <div class="form-row">
+            <label for="editBarcode">Barcode</label>
+            <input id="editBarcode" type="text" required placeholder="8901234567890" />
+          </div>
+          <div class="form-row">
+            <label for="editProductName">Product Name</label>
+            <input id="editProductName" type="text" required placeholder="Parle-G Gold" />
+          </div>
+          <div class="form-row">
+            <label for="editMrp">MRP</label>
+            <input id="editMrp" type="number" min="0" step="0.01" required />
+          </div>
+          <div class="form-row">
+            <label for="editSellingPrice">Selling Price</label>
+            <input id="editSellingPrice" type="number" min="0" step="0.01" required />
+          </div>
+          <div class="form-row">
+            <label for="editStockQuantity">Stock Quantity</label>
+            <input id="editStockQuantity" type="number" min="0" step="1" required />
+          </div>
+          <div class="form-row">
+            <label for="editExpiryDate">Expiry Date</label>
+            <input id="editExpiryDate" type="date" required />
+          </div>
+          <div class="inline" style="grid-column: 1 / -1; justify-content:flex-end;">
+            <button id="cancelEditProductBtn" class="btn-ghost" type="button">Cancel</button>
+            <button class="btn" type="submit">Save Changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/products.js"></script>
+</body>
+</html>
