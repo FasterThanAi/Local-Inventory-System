@@ -15,10 +15,23 @@
   --radius: 16px;
 }
 
+:root.dark {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --ink: #e5e7eb;
+  --muted: #94a3b8;
+  --primary: #14b8a6;
+  --primary-dark: #0d9488;
+  --accent: #f97316;
+  --line: #334155;
+  --shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  transition: background 0.2s ease, color 0.2s ease, border 0.2s ease;
 }
 
 body {
@@ -217,7 +230,10 @@ a {
   box-shadow: var(--shadow);
   padding: 18px;
 }
-
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+}
 .card h2,
 .card h3 {
   font-family: 'Space Grotesk', sans-serif;
