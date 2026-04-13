@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Inventory</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="auth-shell">
+    <section class="auth-card">
+      <h1>Login</h1>
+      <p>Enter your email to receive OTP and login.</p>
+
+      <form id="loginRequestForm" class="form-grid" autocomplete="off">
+        <div class="form-row">
+          <label for="loginEmail">Email</label>
+          <input id="loginEmail" type="email" required placeholder="owner@shop.com" />
+        </div>
+        <button class="btn btn-block" type="submit">Send OTP</button>
+      </form>
+
+      <div id="loginOtpSection" style="display:none; margin-top:14px;">
+        <div class="line"></div>
+        <form id="loginVerifyForm" class="form-grid" autocomplete="off">
+          <div class="form-row">
+            <label for="loginOtp">OTP</label>
+            <input id="loginOtp" type="text" maxlength="4" required placeholder="4-digit OTP" />
+          </div>
+          <button class="btn btn-block" type="submit">Verify OTP & Login</button>
+        </form>
+        <button id="resendLoginOtpBtn" class="btn-ghost btn-block" type="button" style="margin-top:8px;">Resend OTP</button>
+      </div>
+
+      <div id="loginMessage" class="msg"></div>
+      <div class="line"></div>
+      <p class="small">No account yet? <a href="register.html" style="color:#0f766e;font-weight:700;">Create one</a></p>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

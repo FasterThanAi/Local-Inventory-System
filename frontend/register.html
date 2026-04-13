@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register | Inventory</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="auth-shell">
+    <section class="auth-card">
+      <h1>Create Account</h1>
+      <p>Register with shop details to receive OTP.</p>
+
+      <form id="registerForm" class="form-grid" autocomplete="off">
+        <div class="form-row">
+          <label for="registerEmail">Email</label>
+          <input id="registerEmail" type="email" required placeholder="owner@shop.com" />
+        </div>
+        <div class="form-row">
+          <label for="shopName">Shop Name</label>
+          <input id="shopName" type="text" required placeholder="My Grocery Store" />
+        </div>
+        <button class="btn btn-block" type="submit">Register & Send OTP</button>
+      </form>
+
+      <div id="registerMessage" class="msg"></div>
+      <div class="line"></div>
+      <p class="small">Already registered? <a href="login.html" style="color:#0f766e;font-weight:700;">Go to login</a></p>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
