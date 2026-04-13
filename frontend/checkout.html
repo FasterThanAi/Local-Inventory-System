@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout | Inventory</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://unpkg.com/html5-qrcode/html5-qrcode.min.js"></script>
+</head>
+<body data-protected="true" data-page="checkout">
+  <div id="navbar"></div>
+
+  <main class="page">
+    <h1 class="page-title">Checkout</h1>
+    <p class="page-subtitle">Create order and generate bill.</p>
+
+    <div id="checkoutMessage" class="msg"></div>
+
+    <section class="card">
+      <form id="checkoutForm" class="form-grid" autocomplete="off">
+        <div class="inline" style="justify-content:space-between; margin-bottom: 8px;">
+          <h3>Cart Items</h3>
+          <button id="addItemBtn" class="btn-outline" type="button">+ Add Item</button>
+        </div>
+
+        <button id="startCameraBtn" class="btn-outline" type="button">Start Camera Scanner</button>
+        <div id="reader" style="width: 100%; display: none;"></div>
+
+        <div id="checkoutItems"></div>
+
+        <div class="line"></div>
+
+        <div class="form-grid cols-2">
+          <div class="form-row">
+            <label for="paymentMode">Payment Mode</label>
+            <select id="paymentMode" required>
+              <option value="Cash">Cash</option>
+              <option value="UPI">UPI</option>
+              <option value="Credit">Credit</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="checkoutCustomer">Customer (required for Credit)</label>
+            <select id="checkoutCustomer"></select>
+          </div>
+        </div>
+
+        <div class="inline" style="justify-content:space-between; margin-top:8px;">
+          <div>
+            <div class="small">Order Total</div>
+            <div id="checkoutTotal" class="checkout-total">Rs 0.00</div>
+          </div>
+          <button class="btn" type="submit">Complete Checkout</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/billing.js"></script>
+</body>
+</html>

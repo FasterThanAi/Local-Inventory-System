@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bills | Inventory</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-protected="true" data-page="bills">
+  <div id="navbar"></div>
+
+  <main class="page">
+    <div class="inline" style="justify-content:space-between; margin-bottom:10px;">
+      <div>
+        <h1 class="page-title">Bills</h1>
+        <p class="page-subtitle">Billing history with itemized details.</p>
+      </div>
+      <div class="inline">
+        <select id="billFilter" class="btn-outline">
+          <option value="active" selected>Active Bills</option>
+          <option value="voided">Voided Bills</option>
+          <option value="all">All Bills</option>
+        </select>
+        <button id="refreshBillsBtn" class="btn-ghost" type="button">Refresh</button>
+      </div>
+    </div>
+
+    <div id="billsMessage" class="msg"></div>
+    <section id="billsContainer"></section>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/billing.js"></script>
+</body>
+</html>
