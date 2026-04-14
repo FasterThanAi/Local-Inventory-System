@@ -66,7 +66,7 @@
         <form id="editProductForm" class="form-grid cols-2" autocomplete="off">
           <div class="form-row">
             <label for="editBarcode">Barcode</label>
-            <input id="editBarcode" type="text" required placeholder="8901234567890" />
+            <input id="editBarcode" type="text" required placeholder="8901234567890"  required pattern="[0-9]{8,13}/>
           </div>
           <div class="form-row">
             <label for="editProductName">Product Name</label>
